@@ -15,8 +15,8 @@ void ordenamientoBurbuja(int arreglo[], int tamaño) {
 
 // Función para realizar la búsqueda binaria
 int busquedaBinaria(int arreglo[], int tamaño, int objetivo) {
-    int izquierda = 0;
-    int derecha = tamaño - 1;
+    int izquierda = 0; // También se usa BAJO para identificar el primer valor del arreglo
+    int derecha = tamaño - 1; //también se usa ALTO para identificar el último valor del arreglo
     int medio;
 
     while (izquierda <= derecha) {
