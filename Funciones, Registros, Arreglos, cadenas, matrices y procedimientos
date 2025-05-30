@@ -252,3 +252,78 @@ o	Cuenta cuántos elementos son menores para determinar la posición final.
 6.	Métodos Externos:
 o	Natural merging, Polyphase sort, etc.
 
+🧵 Cadenas de caracteres en C
+En el lenguaje C, las cadenas de caracteres no son un tipo de dato nativo como en otros lenguajes. En su lugar, se representan como arreglos (arrays) de caracteres terminados con un carácter especial: el null terminator ('\0'). Esta convención permite al lenguaje saber dónde termina la cadena.
+
+• Declaración e inicialización
+Declaración:
+char nombre[20];
+Esto crea un arreglo de 20 caracteres.
+
+• Inicialización:
+char saludo[] = "Hola Mundo";
+El compilador asigna automáticamente el tamaño necesario, incluyendo el carácter '\0' al final.
+
+• Funciones comunes
+
+strlen(cadena): Devuelve la longitud de la cadena (sin contar el '\0').
+
+strcpy(destino, origen): Copia el contenido de una cadena a otra.
+
+strcat(destino, origen): Concatena dos cadenas.
+
+strcmp(cadena1, cadena2): Compara dos cadenas lexicográficamente.
+
+Estas funciones se encuentran en la biblioteca estándar <string.h> .
+
+📐 Matrices (arreglos bidimensionales)
+
+Una matriz en C es un arreglo de arreglos, es decir, una estructura que permite almacenar datos en una tabla con filas y columnas. Es útil para representar datos como tablas, imágenes o matrices matemáticas.
+
+• Declaración
+
+tipo nombre[filas][columnas];
+Ejemplo:
+
+int matriz[3][4];
+Esto crea una matriz de 3 filas y 4 columnas. Los elementos se acceden mediante dos índices: matriz[fila][columna].
+
+• Inicialización
+
+int matriz[2][2] = {{1, 2}, {3, 4}};
+Operaciones comunes
+Acceso a elementos: matriz[1][2] accede al elemento en la segunda fila y tercera columna.
+
+• Recorrido: Utilizando bucles for anidados para iterar sobre filas y columnas.
+
+🛠️ Procedimientos y funciones
+En C, las funciones y procedimientos son bloques de código reutilizables que realizan tareas específicas. La diferencia principal radica en si devuelven un valor o no.
+
+• Funciones
+
+Son bloques de código que realizan una tarea y devuelven un valor. Su declaración incluye un tipo de retorno.
+
+tipo_de_retorno nombre_funcion(parámetros) {
+    // cuerpo de la función
+}
+
+Ejemplo:
+
+int sumar(int a, int b) {
+    return a + b;
+}
+
+• Procedimientos
+
+En C, los procedimientos se implementan como funciones que no devuelven valor, es decir, su tipo de retorno es void.
+
+void imprimirSaludo() {
+    printf("¡Hola Mundo!\n");
+}
+
+• Llamada a funciones y procedimientos
+
+Una vez definidos, se pueden invocar en el main o en otras funciones:
+
+int resultado = sumar(3, 4);
+imprimirSaludo();
