@@ -1,7 +1,8 @@
 📘 FUNCIONES EN C – Transcripción Ordenada
 ________________________________________
 🧠 Definición de Función
-Una función es un subprograma que realiza una tarea determinada y acotada. Se le pasan datos (parámetros) y devuelve datos (valor de retorno). Solo se ejecuta cuando se la llama.
+Una FUNCIÓN es un subprograma que realiza una tarea determinada y bien acotada a la cual le pasamos datos y nos devuelve datos. 
+Esta función se ejecuta cuando se lo llama (llamada a la función)
 ________________________________________
 ✅ Ventajas de Usar Funciones
 •	Simplifican la comprensión del programa.
@@ -11,10 +12,24 @@ ________________________________________
 •	Independencia del código por módulos.
 ________________________________________
 📦 Modularización en Programación
+• Para resolver un problema complejo de desarrollo de software,
+   conviene separarlo en partes más pequeñas, que se puedan diseñar,
+   desarrollar, probar y modificar, de manera sencilla y lo más
+   independientemente posible del resto de la aplicación.
+
 •	Divide problemas complejos en partes más pequeñas.
 •	Estas partes se llaman módulos.
 •	Cada módulo debe resolver una única tarea → cohesión alta.
 •	Si un módulo tiene más de un verbo activo, debería dividirse.
+
+📦 Cohecion
+
+   La cohesión se refiere a que cada módulo del sistema se refiera a
+   un único proceso o entidad.
+
+   • A mayor cohesión, mejor: el módulo en cuestión será más sencillo de diseñar,
+   programar, probar y mantener.
+
 ________________________________________
 🔗 Acoplamiento
 •	Mide cuán relacionado está un módulo con otros.
