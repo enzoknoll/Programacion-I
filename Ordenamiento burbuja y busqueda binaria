@@ -1,0 +1,67 @@
+// Función para realizar el ordenamiento burbuja
+void ordenamientoBurbuja(int arreglo[], int tamaño) {
+    int i, j, temporal;
+    for (i = 0; i < tamaño - 1; i++) {
+        for (j = 0; j < tamaño - i - 1; j++) {
+            if (arreglo[j] > arreglo[j + 1]) {
+                // Intercambiar valores
+                temporal = arreglo[j];
+                arreglo[j] = arreglo[j + 1];
+                arreglo[j + 1] = temporal;
+            }
+        }
+    }
+}
+
+// Función para realizar la búsqueda binaria
+int busquedaBinaria(int arreglo[], int tamaño, int objetivo) {
+    int izquierda = 0;
+    int derecha = tamaño - 1;
+    int medio;
+
+    while (izquierda <= derecha) {
+        medio = izquierda + (derecha - izquierda) / 2;
+
+        if (arreglo[medio] == objetivo) {
+            return medio;  // Elemento encontrado, devuelve índice
+        } else if (arreglo[medio] < objetivo) {
+            izquierda = medio + 1;  // Buscar en la mitad derecha
+        } else {
+            derecha = medio - 1;  // Buscar en la mitad izquierda
+        }
+    }
+
+    return -1;  // Elemento no encontrado
+}
+
+// Función para imprimir el arreglo
+void imprimirArreglo(int arreglo[], int tamaño) {
+    for (int i = 0; i < tamaño; i++) {
+        printf("%d ", arreglo[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int arreglo[] = {64, 25, 12, 22, 11};
+    int tamaño = sizeof(arreglo) / sizeof(arreglo[0]);
+
+    printf("Arreglo original: ");
+    imprimirArreglo(arreglo, tamaño);
+
+    ordenamientoBurbuja(arreglo, tamaño);
+
+    printf("Arreglo ordenado: ");
+    imprimirArreglo(arreglo, tamaño);
+
+    int objetivo = 22;
+    int resultado = busquedaBinaria(arreglo, tamaño, objetivo);
+
+    if (resultado != -1) {
+        printf("Elemento %d encontrado en el índice %d\n", objetivo, resultado);
+    } else {
+        printf("Elemento %d no encontrado\n", objetivo);
+    }
+
+    return 0;
+}
