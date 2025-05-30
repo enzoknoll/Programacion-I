@@ -20,8 +20,8 @@ void cargar_productos(struct productos *producto, int n) {
 }
 
 void ordenar_productos(struct productos *producto, int n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - 1; j++) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
             if (producto[j].numero_producto > producto[j + 1].numero_producto) {
                 struct productos temp = producto[j];
                 producto[j] = producto[j + 1];
