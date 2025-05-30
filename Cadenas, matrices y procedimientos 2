@@ -1,0 +1,59 @@
+🔤 Cadenas (Strings) en C
+
+En C, una cadena de caracteres es un arreglo de tipo char que representa una secuencia de caracteres terminada por el carácter nulo '\0'. Este carácter especial indica el final de la cadena y es esencial para su correcta manipulación.
+
+• Declaración e inicialización:
+
+char saludo[] = "Hola";
+En este ejemplo, saludo es un arreglo que contiene los caracteres 'H', 'o', 'l', 'a' y '\0'.
+
+• Funciones comunes para manipular cadenas:
+
+strlen(cadena): Devuelve la longitud de la cadena (sin contar el '\0').
+
+strcpy(destino, origen): Copia la cadena de origen a destino.
+
+strcat(destino, origen): Concatena la cadena origen al final de destino.
+
+strcmp(cadena1, cadena2): Compara dos cadenas y devuelve un valor según su orden lexicográfico.
+Tutoriales Programacion Ya
+
+Estas funciones se encuentran en la biblioteca estándar <string.h>.
+
+🔢 Matrices (Arrays Multidimensionales) en C
+Una matriz en C es un arreglo multidimensional que permite almacenar datos del mismo tipo en una estructura de filas y columnas. Las matrices más comunes son las bidimensionales, que se asemejan a una tabla.
+
+• Declaración de una matriz bidimensional:
+
+int matriz[3][4];
+Aquí, matriz es una matriz de 3 filas y 4 columnas que puede almacenar enteros.
+
+• Inicialización de una matriz:
+
+int matriz[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+• Acceso a elementos:
+
+Para acceder al elemento en la fila i y columna j:
+
+matriz[i][j];
+Las matrices son útiles para representar datos tabulares, realizar operaciones matemáticas y manejar estructuras más complejas.
+
+⚙️ Procedimientos (Funciones que no devuelven valor) en C
+En C, un procedimiento es una función que realiza una tarea específica pero no devuelve ningún valor. Se define utilizando el tipo de retorno void.
+
+• Definición de un procedimiento:
+
+void mostrarMensaje() {
+    printf("Hola, mundo!\n");
+}
+
+En este ejemplo, mostrarMensaje es un procedimiento que imprime un mensaje en la consola.
+
+• Llamada a un procedimiento:
+
+mostrarMensaje();
+Los procedimientos son útiles para modularizar el código, mejorar su legibilidad y reutilizar bloques de instrucciones que realizan tareas comunes.
