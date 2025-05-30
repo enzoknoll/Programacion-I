@@ -1,0 +1,254 @@
+📘 FUNCIONES EN C – Transcripción Ordenada
+________________________________________
+🧠 Definición de Función
+Una función es un subprograma que realiza una tarea determinada y acotada. Se le pasan datos (parámetros) y devuelve datos (valor de retorno). Solo se ejecuta cuando se la llama.
+________________________________________
+✅ Ventajas de Usar Funciones
+•	Simplifican la comprensión del programa.
+•	Permiten aislar errores y depurar módulos.
+•	Facilitan modificaciones futuras.
+•	Reutilización sin necesidad de revisar nuevamente.
+•	Independencia del código por módulos.
+________________________________________
+📦 Modularización en Programación
+•	Divide problemas complejos en partes más pequeñas.
+•	Estas partes se llaman módulos.
+•	Cada módulo debe resolver una única tarea → cohesión alta.
+•	Si un módulo tiene más de un verbo activo, debería dividirse.
+________________________________________
+🔗 Acoplamiento
+•	Mide cuán relacionado está un módulo con otros.
+•	Bajo acoplamiento = mejor diseño.
+•	Se logra reduciendo interacciones y efectos colaterales.
+________________________________________
+🔁 Funcionamiento de main
+•	Toda aplicación en C debe tener una función main().
+•	El programa comienza ejecutando main.
+•	main puede llamar a otras funciones.
+•	Las definiciones deben ser independientes entre sí.
+________________________________________
+🎯 Argumentos y return
+•	Argumentos (o parámetros): datos que recibe una función.
+•	Return: devuelve un único valor.
+•	Ejemplo:
+return [expresión];
+________________________________________
+🧰 Tipos de Funciones
+•	Predefinidas: vienen con el lenguaje. Ej: pow().
+•	Definidas por el usuario: se crean cuando no hay funciones predefinidas que resuelvan el problema.
+________________________________________
+🔧 Procedimientos
+•	En C se los implementa como funciones tipo void.
+•	No devuelven valor y pueden no tener return.
+________________________________________
+🗃 Variables
+•	Locales: definidas dentro de funciones. Solo existen allí.
+•	Globales: definidas fuera de funciones. Visibles en todo el programa.
+________________________________________
+📤 Pasaje de Parámetros
+•	Por valor: se copia el valor.
+•	Por referencia: se pasa la dirección (punteros).
+________________________________________
+🧱 Estructura de una Función
+tipo_de_dato nombre_funcion(tipo param1, tipo param2) {
+   // instrucciones
+   return valor;
+}
+________________________________________
+🔡 Ejemplos de Código
+________________________________________
+📄 Sin Función
+
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+   int x, y, z;
+   printf("Ingrese número: ");
+   scanf("%d", &x);
+   printf("Ingrese número: ");
+   scanf("%d", &y);
+   z = x + y;
+   printf("La suma es %d", z);
+   getch();
+   return 0;
+}
+________________________________________
+📄 Con Función
+
+#include <stdio.h>
+#include <conio.h>
+
+int suma(int a, int b);
+
+int main() {
+   int x, y, z;
+   printf("Ingrese número: ");
+   scanf("%d", &x);
+   printf("Ingrese número: ");
+   scanf("%d", &y);
+   z = suma(x, y);
+   printf("La suma es %d", z);
+   getch();
+   return 0;
+}
+
+int suma(int a, int b) {
+   int total = a + b;
+   return total;
+}
+________________________________________
+📄 Función con parámetros por referencia
+int suma(int *a, int *b) {
+   int total = *a + *b;
+   return total;
+}
+________________________________________
+📄 Procedimiento con void
+void imprimeValor() {
+   int contador = 5;
+   printf("El valor de contador es: %d\n", contador);
+}
+________________________________________
+📄 Función que suma un arreglo
+#define max 9
+
+int sumoarreglo(int a[], int n) {
+   int suma = 0;
+   for (int i = 0; i < n; i++) suma += a[i];
+   return suma;
+}
+
+
+
+________________________________________
+📄 Función promedio
+
+float promedio(int a[], int n) {
+   int suma = 0;
+   float prom = 0;
+   for (int i = 0; i < n; i++) suma += a[i];
+   prom = suma / n;
+   return prom;
+}
+________________________________________
+📄 Resumen de "Registros"
+
+Tema principal: Uso de estructuras (registros) en C para manejar datos compuestos.
+
+✅ Conceptos Clave:
+•	Estructura (struct): Agrupa variables de distintos tipos bajo un solo nombre.
+
+  Una estructura o registro es una estructura de datos
+  que agrupa variables que pueden tener tipos
+  diferentes.
+
+  Es decir, en una estructura en la que se puede definir datos o valores de diferentes tipos.
+
+  Cada componente de un registro se conoce como
+  campo o miembro.
+
+  Los componentes de la estructura se declaran dentro de ella, cada uno
+  con su tipo y nombre de variable, los tipos pueden ser diferentes.
+  El nombre (tiponuevo) de la estructura se considera como un tipo, no
+  una variable.
+•	Campo o miembro: Cada variable dentro de una estructura.
+•	Arreglos de estructuras: Permiten manejar múltiples registros (ej. varios amigos).
+
+🛠️ Operaciones comunes con estructuras:
+•	Cargar, recorrer, buscar, acceder, insertar, eliminar y ordenar elementos dentro de arreglos de estructuras.
+  •Cargar un arreglo de estructuras.
+  •Recorrer un arreglo de estructuras.
+  •Buscar un elemento en particular de estructuras.
+  •Acceder a un elemento en una posición determinada.
+  •Acceder a una posición determinada y mostrar su contenido.
+  •Insertar un nuevo elemento.
+  •Eliminar un elemento.
+
+  •Ordenar un arreglo de estructuras.
+🧪 Ejemplos de código:
+1.	Estructura básica de un amigo:
+struct estructura_amigo {
+    char nombre[30];
+    char apellido[40];
+    char telefono[10];
+    int edad;
+};
+
+
+2.	Cargar y mostrar datos de un amigo con scanf.
+3.	Arreglo de estructuras para varios amigos:
+o	Usando arrays y bucles para almacenar y mostrar múltiples registros.
+4.	Calcular el promedio de edad de amigos.
+5.	Manejo de cuentas bancarias:
+o	Identifica clientes deudores y acreedores según su saldo.
+________________________________________
+
+📄 Resumen de "Arreglos"
+
+Tema principal: Métodos de ordenamiento de arreglos.
+
+  • Ordenar un arreglo:
+    Es la operación de ordenar un arreglo en
+    algún orden de acuerdo a un criterio de
+    ordenamiento.
+
+✅ Clasificación:
+
+  • Ordenamientos internos: 
+    Son aquellos en los que los valores a ordenar están
+    en memoria principal, por lo que se asume que el tiempo que se requiere para
+    acceder cualquier elemento sea el mismo (a [1], a [500], etc.).
+
+  • Ordenamientos externos: 
+    Son aquellos en los que los valores a ordenar están
+    en memoria secundaria (disco, cinta, cilindro magnético, etc.), por lo que se
+    asume que el tiempo que se requiere para acceder a cualquier elemento
+    depende de la última posición accesada (posición 1, posición 500, etc.).
+
+🔁 Tipos de Algoritmos:
+
+1.	Intercambio:
+  En este tipo de algoritmos se toman los elementos de dos en dos, se comparan y
+  se INTERCAMBIAN si no están en el orden adecuado. Este proceso se repite hasta
+  que se ha analizado todo el conjunto de elementos y ya no hay intercambios.
+  Entre estos algoritmosse encuentran el Burbuja (BubbleSort) y QuickSort
+
+o	Compara elementos dos a dos e intercambia si es necesario.
+o	Ejemplos: BubbleSort, QuickSort.
+
+2.	Inserción:
+  En este tipo de algoritmo los elementos que van a ser ordenados
+  son considerados uno a la vez.
+  Cada elemento es INSERTADO en la posición apropiada con
+  respecto al resto de los elementos ya ordenados.
+  Entre estos algoritmos se encuentran el de Inserción Directa,
+  ShellSort, Inserción Binaria y Hashing.
+
+o	Inserta cada elemento en su lugar correspondiente.
+o	Ejemplos: InsertionSort, ShellSort.
+
+3.	Selección:
+  En este tipo de algoritmos se SELECCIONA o se busca el elemento
+  más pequeño (o más grande) de todo el conjunto de elementos y
+  se coloca en su posición adecuada. Este proceso se repite para el
+  resto de los elementos hasta que todos son analizados.
+  Entre estos algoritmos se encuentra el de Selección Directa.
+
+o	Busca el menor/mayor y lo coloca en su sitio.
+o	Ejemplo: Selección Directa.
+
+4.	Enumeración:
+  En este tipo de algoritmos cada elemento es comparado contra los
+  demás. En la comparación se cuenta cuántos elementos son más
+  pequeños que el elemento que se está analizando, generando así
+  una “enumeración”. El número generado para cada elemento
+  indicará su posición.
+
+o	Cuenta cuántos elementos son menores para determinar la posición final.
+
+5.	Árbol, MergeSort, RadixSort: Otros métodos internos.
+
+6.	Métodos Externos:
+o	Natural merging, Polyphase sort, etc.
+
